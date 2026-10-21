@@ -1,0 +1,112 @@
+{
+  "dataset": {
+    "rows": 569,
+    "features": 30,
+    "missing_cells": 0,
+    "duplicate_rows": 0,
+    "class_counts": {
+      "benign": 357,
+      "malignant": 212
+    }
+  },
+  "split_counts": {
+    "train": 398,
+    "validation": 85,
+    "test": 86,
+    "final_fit_train_plus_validation": 483
+  },
+  "tuning_candidates": [
+    {
+      "layers": "(32,)",
+      "alpha": 0.001,
+      "validation_accuracy": 0.9764705882352941,
+      "validation_auc": 0.9982311320754716
+    },
+    {
+      "layers": "(64, 32)",
+      "alpha": 0.001,
+      "validation_accuracy": 0.9882352941176471,
+      "validation_auc": 0.9982311320754718
+    },
+    {
+      "layers": "(128, 64)",
+      "alpha": 0.001,
+      "validation_accuracy": 0.9647058823529412,
+      "validation_auc": 0.9982311320754718
+    },
+    {
+      "layers": "(64, 32)",
+      "alpha": 0.01,
+      "validation_accuracy": 0.9882352941176471,
+      "validation_auc": 0.9982311320754718
+    }
+  ],
+  "selected_model": {
+    "hidden_layer_sizes": [
+      64,
+      32
+    ],
+    "alpha": 0.001,
+    "activation": "relu",
+    "solver": "adam",
+    "learning_rate_init": 0.001,
+    "max_iter": 400,
+    "early_stopping": true,
+    "random_state": 42
+  },
+  "test_accuracy": 0.9651162790697675,
+  "test_roc_auc": 0.994212962962963,
+  "confusion_matrix_labels_order": [
+    "malignant",
+    "benign"
+  ],
+  "confusion_matrix": [
+    [
+      29,
+      3
+    ],
+    [
+      0,
+      54
+    ]
+  ],
+  "classification_report": {
+    "malignant": {
+      "precision": 1.0,
+      "recall": 0.90625,
+      "f1-score": 0.9508196721311475,
+      "support": 32.0
+    },
+    "benign": {
+      "precision": 0.9473684210526315,
+      "recall": 1.0,
+      "f1-score": 0.972972972972973,
+      "support": 54.0
+    },
+    "accuracy": 0.9651162790697675,
+    "macro avg": {
+      "precision": 0.9736842105263157,
+      "recall": 0.953125,
+      "f1-score": 0.9618963225520603,
+      "support": 86.0
+    },
+    "weighted avg": {
+      "precision": 0.966952264381885,
+      "recall": 0.9651162790697675,
+      "f1-score": 0.9647298842876425,
+      "support": 86.0
+    }
+  },
+  "top_permutation_importance": {
+    "worst texture": 0.06046511627906983,
+    "area error": 0.03953488372093028,
+    "radius error": 0.032558139534883776,
+    "mean texture": 0.03023255813953494,
+    "worst concavity": 0.026744186046511676,
+    "worst concave points": 0.024418604651162835,
+    "mean concavity": 0.02209302325581399,
+    "worst area": 0.020930232558139573,
+    "worst radius": 0.01976744186046516,
+    "perimeter error": 0.01976744186046515
+  }
+}
